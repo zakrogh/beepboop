@@ -22,7 +22,10 @@ var beepBoop = function(num, name){
 }
 
 //front end
-var displayOutput = function(arr){
+var displayOutput = function(arr, reverseOrder){
+  if(reverseOrder){
+    arr = arr.reverse();
+  }
   $(".output").text("");
   $(".output").append(arr.join(" "));
   $(".output").hide();
@@ -33,11 +36,11 @@ var displayOutput = function(arr){
 
 $(document).ready(function(){
   $(".mainform").submit(function(event){
-    $(".inputGroup").removeClass("has-error");
     let userInput = parseInt($(".userInput").val());
     let userName = $(".userName").val();
+    let order = $("input:checkbox[name=reverse]:checked").val();
     let output = beepBoop(userInput, userName);
-    displayOutput(output);
+    displayOutput(output, order);
     event.preventDefault();
   });
 
