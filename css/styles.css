@@ -1,6 +1,9 @@
-.userInput{
+input{
   max-width: 300px;
 }
 .output{
   display: none;
+}
+.help-block{
+  display; none;
 }
