@@ -1,12 +1,12 @@
 //back end
-
 var beepBoop = function(num, name){
-  var userName = name;
+  let userName = name;
+  //if a name is not provided then the name "Dave" is used
   if(!name){
     userName = "Dave";
   }
   var outputA = [];
-  for(var i = 0; i <= num; i++){
+  for(let i = 0; i <= num; i++){
     if(i.toString().includes("3")){
       outputA.push("I'm sorry, " + userName + ". I'm afraid I can't do that.");
     }else if (i.toString().includes("2")) {
@@ -28,16 +28,23 @@ var displayOutput = function(arr){
   $(".output").hide();
   $(".output").fadeIn();
   $(".userInput").select();
+  $(".htmlInject").attr("disabled", false);
 }
 
 $(document).ready(function(){
   $(".mainform").submit(function(event){
     $(".inputGroup").removeClass("has-error");
-    var userInput = parseInt($(".userInput").val());
-    var userName = $(".userName").val();
-    var output = beepBoop(userInput, userName);
+    let userInput = parseInt($(".userInput").val());
+    let userName = $(".userName").val();
+    let output = beepBoop(userInput, userName);
     displayOutput(output);
-
     event.preventDefault();
+  });
+
+  //simple function to showcase html/script injections
+  $(".htmlInject").click(function(){
+    $(".htmlInject").attr("disabled", true);
+    let input = $(".userName");
+    $(input).val(input.val() + '<img src="img/img1.png">');
   });
 });

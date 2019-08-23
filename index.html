@@ -11,26 +11,27 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h2>Beep Boop</h2>
+        <h1>Beep Boop</h1>
       </div>
       <form class="mainform" action="index.html" method="post">
         <div class="form-group inputGroup">
           <div class="row">
             <div class="col-sm-6">
               <label for="userInput">Enter a number: </label>
-              <input type="number" class="form-control userInput" name="" value="">
+              <input type="number" min="0" class="form-control userInput" name="" value="">
               <span class="help-block">Please enter integer values only.</span>
             </div>
             <div class="col-sm-6">
               <label for="userName">Enter your name (if you wish): </label>
               <input type="text" class="form-control userName" name="" value="">
+              <br>
+              <button type="button" class="htmlInject btn btn-warning" name="button">Click here to add an HTML injection to your name!</button>
             </div>
           </div>
           <button type="submit" class="btn btn-primary" name="button">Submit!</button>
         </div>
       </form>
       <div class="well output">
-
       </div>
     </div>
   </body>

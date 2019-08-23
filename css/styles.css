@@ -1,9 +1,19 @@
 input{
   max-width: 300px;
 }
+body{
+  background-color: rgba(255, 0, 255, 0.03);
+}
 .output{
   display: none;
 }
 .help-block{
   display; none;
+}
+.jumbotron, .well{
+  background-color: rgba(0, 255, 0, 0.2);
+}
+h1{
+  text-align: center;
+  font-family: Lucida Console;
 }
